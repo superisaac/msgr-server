@@ -1,0 +1,23 @@
+{
+  "name": "msgr-server",
+  "version": "0.0.1",
+  "description": "The server of DIY messenger msgr",
+  "main": "server.js",
+  "dependencies": {
+    "mongoose": "~3.8.9",
+    "express": "~4.2.0",
+    "socket.io": "~0.9.16",
+    "imagemagick": "~0.1.3",
+    "uuid": "~1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "messenger"
+  ],
+  "author": "Zeng Ke",
+  "license": "ISC"
+}
