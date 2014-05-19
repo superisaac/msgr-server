@@ -1,7 +1,6 @@
 var helper = require('./helper');
 var url = require('url');
 var express = require('express');  
-var app = express();
 var apiv1 = require('./apiv1');
 var auth = require('./auth');
 var tickprotocol = require('./tickprotocol');
@@ -9,18 +8,10 @@ var tick = require('./tick');
 
 var server = require('http').createServer(app);
 
+var app = express();
 helper.connectMongodb();
 
-app.configure(function () {  
-        app.use(express.bodyParser());  
-        app.use(express.methodOverride());  
-        app.use(express.logger());  
-        app.use(express.bodyParser());  
-        app.use(express.cookieParser());  
-        app.use(express.session({  
-                    secret: "skjghskdjfhbqigohqdioukd",  
-                        }));  
-    });  
+app.use(require('body-parser')());
 
 app.get('/', function (req, res) {  
         res.sendfile(__dirname + '/public/index.html');  
